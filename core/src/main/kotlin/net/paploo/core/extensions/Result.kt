@@ -1,4 +1,4 @@
-package net.paploo.core.functional
+package net.paploo.core.extensions
 
 /*
  * Construction

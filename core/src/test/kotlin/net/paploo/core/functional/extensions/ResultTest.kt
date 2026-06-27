@@ -1,4 +1,4 @@
-package net.paploo.core.functional
+package net.paploo.core.functional.extensions
 
 import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.core.spec.style.DescribeSpec
@@ -8,7 +8,16 @@ import io.kotest.matchers.nulls.shouldNotBeNull
 import io.kotest.matchers.result.shouldBeFailure
 import io.kotest.matchers.result.shouldBeSuccess
 import io.kotest.matchers.shouldBe
-import net.paploo.core.functional.flatten
+import net.paploo.core.extensions.finally
+import net.paploo.core.extensions.finallyCatching
+import net.paploo.core.extensions.flatFinally
+import net.paploo.core.extensions.flatFinallyCatching
+import net.paploo.core.extensions.flatMap
+import net.paploo.core.extensions.flatMapCatching
+import net.paploo.core.extensions.flatRunCatching
+import net.paploo.core.extensions.flatten
+import net.paploo.core.extensions.sequenceToNullable
+import net.paploo.core.extensions.sequenceToResult
 
 class ResultTest : DescribeSpec({
 

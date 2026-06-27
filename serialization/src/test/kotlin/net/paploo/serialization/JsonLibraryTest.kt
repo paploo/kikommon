@@ -39,10 +39,12 @@ class JsonLibraryTest : DescribeSpec({
 
             val point = Point(1.0, 2.0)
             val encoded = json.encodeToString(point)
-            encoded shouldBe """{
-            "x": 1.0,
-            "y": 2.0
-        }"""
+            encoded shouldBe """
+            {
+                "x": 1.0,
+                "y": 2.0
+            }
+            """.trimIndent()
         }
 
         it("should allow overriding its set config") {
