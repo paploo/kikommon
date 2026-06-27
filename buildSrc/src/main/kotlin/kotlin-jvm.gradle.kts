@@ -3,11 +3,17 @@
 package buildsrc.convention
 
 import org.gradle.api.tasks.testing.logging.TestLogEvent
+import com.adarshr.gradle.testlogger.theme.ThemeType
 
 plugins {
     // Apply the Kotlin JVM plugin to add support for Kotlin in JVM projects.
     kotlin("jvm")
+    id("com.adarshr.test-logger")
+    id("io.kotest")
 }
+
+group = "net.paploo"
+version = "0.0.1-SNAPSHOT"
 
 kotlin {
     // Use a specific Java version to make it easier to work in different environments.
@@ -18,12 +24,8 @@ tasks.withType<Test>().configureEach {
     // Configure all test Gradle tasks to use JUnitPlatform.
     useJUnitPlatform()
 
-    // Log information about all test results, not only the failed ones.
-    testLogging {
-        events(
-            TestLogEvent.FAILED,
-            TestLogEvent.PASSED,
-            TestLogEvent.SKIPPED
-        )
+    testlogger {
+        theme = ThemeType.STANDARD_PARALLEL // Pretty colors
+        //theme = ThemeType.PLAIN_PARALLEL // Good for automated build systems
     }
 }
