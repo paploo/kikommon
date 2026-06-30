@@ -7,8 +7,9 @@ plugins {
 dependencies {
     // Apply the kotlinx bundle of dependencies from the version catalog (`gradle/libs.versions.toml`).
 
-    // Export these dependencies
+    // We are an opinionated framework: export these transitive dependencies
     api(libs.kotlinxCoroutines)
+    api(libs.logback)
 
     // Test dependencies
     testImplementation(libs.bundles.kotest)

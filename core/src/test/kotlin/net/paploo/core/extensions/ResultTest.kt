@@ -1,4 +1,4 @@
-package net.paploo.core.functional.extensions
+package net.paploo.core.extensions
 
 import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.core.spec.style.DescribeSpec
